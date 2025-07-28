@@ -1,9 +1,10 @@
 import { test } from 'node:test'
 import { strict as assert } from 'node:assert'
 import { build } from '../src/app.js'
+import { FastifyInstance } from 'fastify'
 
 test('health endpoint should return ok status', async (t) => {
-    let app
+    let app: FastifyInstance | undefined
 
     try {
         app = await build({ logger: false })

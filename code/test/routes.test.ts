@@ -1,9 +1,10 @@
 import { test } from 'node:test'
 import { strict as assert } from 'node:assert'
 import { build } from '../src/app.js'
+import { FastifyInstance } from 'fastify'
 
 test('homepage should return HTML', async (t) => {
-    let app
+    let app: FastifyInstance | undefined
     
     try {
         app = await build({ logger: false })
@@ -27,7 +28,7 @@ test('homepage should return HTML', async (t) => {
 })
 
 test('static files should be served', async (t) => {
-    let app
+    let app: FastifyInstance | undefined
     
     try {
         app = await build({ logger: false })
