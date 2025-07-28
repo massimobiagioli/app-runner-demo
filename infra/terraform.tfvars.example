@@ -1,0 +1,12 @@
+app_name                 = "my-fastify-app"
+github_repository_url    = "https://github.com/username/repository"
+github_branch           = "main"
+auto_deployments_enabled = true
+cpu                     = "0.25 vCPU"
+memory                  = "0.5 GB"
+aws_region              = "us-east-1"
+
+tags = {
+  Environment = "production"
+  Project     = "my-fastify-app"
+}

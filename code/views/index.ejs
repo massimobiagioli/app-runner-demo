@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <!-- Material Design CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="/public/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="blue darken-2">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo">
+                <i class="material-icons left">flash_on</i>
+                Fastify App
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/health">Health</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel center-align">
+                    <h1 class="blue-text text-darken-2">
+                        <i class="material-icons large">rocket_launch</i>
+                    </h1>
+                    <h4><%= message %></h4>
+                    <p class="grey-text">
+                        Questa è una applicazione Fastify 5 con TypeScript, 
+                        configurata per AWS App Runner.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            <i class="material-icons left">speed</i>
+                            Performance
+                        </span>
+                        <p>Fastify è uno dei framework Node.js più veloci, 
+                           ottimizzato per alte performance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            <i class="material-icons left">cloud</i>
+                            AWS App Runner
+                        </span>
+                        <p>Deployment automatico e scalabile su AWS 
+                           con configurazione zero-downtime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            <i class="material-icons left">code</i>
+                            API Endpoints
+                        </span>
+                        <div class="collection">
+                            <a href="/health" class="collection-item">
+                                <span class="badge green white-text">GET</span>
+                                /health - Health check endpoint
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Fastify + TypeScript</h5>
+                    <p class="grey-text text-lighten-4">
+                        Applicazione moderna con Material Design
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © <%= new Date().getFullYear() %> Fastify App
+            </div>
+        </div>
+    </footer>
+
+    <!-- Material Design JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>
