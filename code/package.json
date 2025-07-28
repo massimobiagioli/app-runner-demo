@@ -5,8 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && npm run copy-assets",
-    "copy-assets": "node scripts/copy-assets.js",
+    "build": "tsc && node scripts/copy-assets.mjs",
     "start": "node dist/src/index.js",
     "dev": "tsx watch src/index.ts",
     "test": "node --test --import tsx test/**/*.test.ts",
