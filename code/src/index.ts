@@ -1,4 +1,4 @@
-import { build } from '@src/app.js'
+import { build } from './app.js'
 
 const start = async () => {
   try {

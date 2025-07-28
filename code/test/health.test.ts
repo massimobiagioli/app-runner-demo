@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import { strict as assert } from 'node:assert'
-import { build } from '@src/app.js'
+import { build } from '../src/app.js'
 
 test('health endpoint should return ok status', async (t) => {
     let app
