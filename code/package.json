@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "cp -r views dist/ && cp -r public dist/",
+    "copy-assets": "node scripts/copy-assets.js",
     "start": "node dist/src/index.js",
     "dev": "tsx watch src/index.ts",
     "test": "node --test --import tsx test/**/*.test.ts",
