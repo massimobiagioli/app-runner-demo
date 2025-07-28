@@ -5,7 +5,8 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && node scripts/copy-assets.mjs",
+    "build": "tsc",
+    "postbuild": "copyfiles -u 0 views/**/* dist/ && copyfiles -u 0 public/**/* dist/",
     "start": "node dist/src/index.js",
     "dev": "tsx watch src/index.ts",
     "test": "node --test --import tsx test/**/*.test.ts",
@@ -21,6 +22,7 @@
     "fastify-tsconfig": "^2.0.0",
     "@types/node": "^20.0.0",
     "@types/ejs": "^3.1.5",
+    "copyfiles": "^2.4.1",
     "tsx": "^4.0.0",
     "typescript": "^5.0.0"
   },
