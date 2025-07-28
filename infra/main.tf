@@ -74,6 +74,7 @@ resource "aws_apprunner_service" "app" {
       }
       
       repository_url = var.github_repository_url
+      source_directory = var.source_directory
       
       source_code_version {
         type  = "BRANCH"
