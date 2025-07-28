@@ -5,8 +5,7 @@ build:
     build:
       - npm ci
       - npm run build
-run:
-  runtime-version: 20
+run:  
   command: npm start
   network:
     port: 3000
