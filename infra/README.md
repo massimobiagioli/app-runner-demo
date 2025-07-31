@@ -25,4 +25,14 @@ Questa cartella contiene i file Terraform per il deployment dell'applicazione su
 - `app_name` - Nome dell'applicazione
 - `github_repository_url` - URL del repository GitHub
 - `github_branch` - Branch da deployare (default: main)
-- `auto_deployments_enabled` - Abilita deployment automatici
+- `auto_deployments_enabled` - Abilita deployment automatici (richiede connessione GitHub)
+
+## Auto-deployments
+
+Per abilitare i deployment automatici:
+
+1. Crea manualmente una connessione GitHub nella console AWS App Runner
+2. Imposta `auto_deployments_enabled = true` nel terraform.tfvars
+3. Aggiungi la risorsa `aws_apprunner_connection` nel main.tf se necessario
+
+**Nota**: Gli auto-deployments richiedono autenticazione GitHub anche per repository pubblici.

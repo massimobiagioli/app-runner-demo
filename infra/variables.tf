@@ -20,6 +20,12 @@ variable "github_branch" {
   default     = "main"
 }
 
+variable "source_directory" {
+  description = "Directory containing the application source code"
+  type        = string
+  default     = "code"
+}
+
 variable "auto_deployments_enabled" {
   description = "Enable automatic deployments"
   type        = bool

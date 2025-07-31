@@ -54,20 +54,23 @@ resource "aws_iam_role_policy_attachment" "apprunner_access_role_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSAppRunnerServicePolicyForECRAccess"
 }
 
+# GitHub Connection for App Runner
+resource "aws_apprunner_connection" "github" {
+  connection_name = "${var.app_name}-github"
+  provider_type   = "GITHUB"
+  
+  tags = var.tags
+}
+
 # App Runner Service
 resource "aws_apprunner_service" "app" {
   service_name = var.app_name
 
   source_configuration {
-    repository_url = var.github_repository_url
-    
-    source_code_version {
-      type  = "BRANCH"
-      value = var.github_branch
+    authentication_configuration {
+      connection_arn = aws_apprunner_connection.github.arn
     }
-
-    auto_deployments_enabled = var.auto_deployments_enabled
-
+    
     code_repository {
       code_configuration {
         configuration_source = "REPOSITORY"
